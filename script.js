@@ -1,14 +1,20 @@
 function minDate(dates) {
-  var temp = 1;
-  for (let i = 0; i < dates.length; i++) {
-  	if (dates[i].getTime() < dates[temp].getTime()) {
-  		temp = dates[i];
-  	}
-  }
-	return temp;
-}
+  // first date in the array
+  let min = dates[0];
 
-// Do not change the code
+  // Iterate through the rest of the dates
+  for (let i = 1; i < dates.length; i++) {
+    let currentDate = dates[i];
+
+    // Compare current date with the current minimum
+    if (currentDate < min) {
+      min = currentDate;
+    }
+  }
+
+  // Format the minimum date as "YYYY/MM/DD"
+  return min;
+}
 
 var dates = [
   "2023/03/01",
